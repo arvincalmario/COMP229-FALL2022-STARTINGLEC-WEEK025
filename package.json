@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "connect": "^3.7.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "name": "comp229-fall2022-startinglec-week025",
+  "description": "test",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arvincalmario/COMP229-FALL2022-STARTINGLEC-WEEK025.git"
+  },
+  "keywords": [
+    "COMP229",
+    "Express",
+    "NodeJS",
+    "EJS",
+    "MEAN"
+  ],
+  "author": "Arvin Almario",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arvincalmario/COMP229-FALL2022-STARTINGLEC-WEEK025/issues"
+  },
+  "homepage": "https://github.com/arvincalmario/COMP229-FALL2022-STARTINGLEC-WEEK025#readme"
+}
