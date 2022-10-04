@@ -6,6 +6,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color: #8f816e;
 }
 
 .footer {
@@ -14,9 +15,17 @@ body {
   width: 100%;
   /* set the fixed height of the footer here */
   height: 60px;
-  background-color: #f5f5f5;
+  background-color: #8d6a35;
 }
 
-.flash{
-  color: red;
+.homepage {
+  font-family: 'Lucida Console", "Courier New", monospace';
+  font-style: italic;
 }
+
+.carousel-caption {
+  position: relative;
+  left: auto;
+  right: auto;
+  } 
+
