@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   res.render(
     'home', 
     { 
-      title: 'Innovation, taking to the next level', 
+      title: 'Home', 
       mission: 'to provide out of the box ideas that gives my clients advantage to their business competitors' 
     }
   );

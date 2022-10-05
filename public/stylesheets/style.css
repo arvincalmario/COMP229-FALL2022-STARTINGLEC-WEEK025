@@ -1,26 +1,22 @@
 html {
   position: relative;
   min-height: 100%;
+  font-style: italic;
 }
 
 body {
-  /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-color: #8f816e;
+  background-color: rgb(66, 65, 65);
 }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* set the fixed height of the footer here */
   height: 60px;
-  background-color: #8d6a35;
-}
-
-.homepage {
-  font-family: 'Lucida Console", "Courier New", monospace';
-  font-style: italic;
+  text-align: center;
+  color: white;
+  background-color: rgb(66, 65, 65);
 }
 
 .carousel-caption {
@@ -28,4 +24,12 @@ body {
   left: auto;
   right: auto;
   } 
+
+.projectsHeader {
+  text-align: center;
+  color: white;
+}
+
+
+  
 

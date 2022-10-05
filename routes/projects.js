@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
     res.render(
       'projects', 
       { 
-        title: 'On-going Projects',
+        title: 'Projects',
         caption: 'some of my on-going projects to learn different programming languages'
       }
     );

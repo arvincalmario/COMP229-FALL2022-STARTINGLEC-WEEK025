@@ -1,37 +1,31 @@
 <% include partials/header.ejs %>
 
-    <h1><%= title %></h1>
-
 <div class="container mt-3">
-    <h2>Services</h2>
+    <h2></h2>
     
-    <table class="table table-dark">
-    <thead>
-        <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        </tr>
-        <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        </tr>
-        <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        </tr>
-    </tbody>
-    </table>
-    <a href="pdf/ARVIN ALMARIO CV.pdf">PDF of my Services</a>
+    <div class="container py-4">    
+        <div class="p-5 mb-4 bg-dark text-white rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Web designing</h1>
+            <p class="col-md-8 fs-4">I build websites based on client's preference, and modify a bit to fit their personality. Click the link to see some of the creative website i can create. (note: this is not mine, only for homework purposes. credits to the owner of that page.)</p>
+            <a href="https://www.seanhalpin.design/" class="btn btn-secondary btn-lg active" role="button">Click to see sample</a>
+          </div>
+        </div>
+    
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-white bg-dark rounded-3">
+              <h2>Mobile Application</h2>
+              <p>I build mobile applications from scratch, or create a mobile app based on an already built website of a client.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-white bg-dark rounded-3">
+              <h2>Database structure</h2>
+              <p>I build database structure to cater clients data bank. </p>
+            </div>
+          </div>
+        </div> 
 </div>
 
 <% include partials/footer.ejs %>

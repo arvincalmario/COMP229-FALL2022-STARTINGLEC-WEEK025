@@ -1,7 +1,108 @@
 <% include partials/header.ejs %>
 
-    <h1><%= title %></h1>
-    <p>This is <%= name %>'s page</p>
+<section style="background-color: rgb(66, 65, 65);">
+    <div class="container py-5">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4 bg-dark">
+            <div class="card-body text-center bg-dark text-white">
+              <img src="/images/photo.png" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h5 class="my-3"><%= nickName %></h5>
+              <p class="text-muted mb-1">Software Developer</p>      
+              <h6 class="my-3">About Me</h6>
+              <p class="text-muted mb-4"><%= descriptionOfMe %></p>
+              <h6 class="my-3">Top Skills</h6>
+              <ul class="list-group">
+                <li class="list-group-item">Critical thinking</li>
+                <li class="list-group-item">Task Prioritization</li>
+                <li class="list-group-item">Team Collaboration</li>
+                <li class="list-group-item">Planning</li>
+                <li class="list-group-item">Documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card mb-4 bg-dark text-white">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Full Name</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0"><%= FullName %></p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Gender</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">Male</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Date of Birth</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">January 1 1975</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Religion</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">Roman Catholic</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Nationality</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">Filipino</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Hobbies</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">Playing video games and travelling when possible</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Address</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0"><%= address %></p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Curicculum Vitae</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0"><a href="pdf/ARVIN ALMARIO CV.pdf">click here to open</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
 
 <% include partials/footer.ejs %>
  
