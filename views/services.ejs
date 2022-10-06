@@ -1,5 +1,10 @@
+<!-- Student ID: 301225269
+Name: Arvin Almario
+Data: Oct 03, 2022 -->
+
 <% include partials/header.ejs %>
 
+//using jumbotron bootstrap and get the js route file 
 <div class="container mt-3">
     <h2></h2>
     
@@ -7,7 +12,7 @@
         <div class="p-5 mb-4 bg-dark text-white rounded-3">
           <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Web designing</h1>
-            <p class="col-md-8 fs-4">I build websites based on client's preference, and modify a bit to fit their personality. Click the link to see some of the creative website i can create. (note: this is not mine, only for homework purposes. credits to the owner of that page.)</p>
+            <p class="col-md-8 fs-4"><%= serviceA %></p>
             <a href="https://www.seanhalpin.design/" class="btn btn-secondary btn-lg active" role="button">Click to see sample</a>
           </div>
         </div>
@@ -16,13 +21,13 @@
           <div class="col-md-6">
             <div class="h-100 p-5 text-white bg-dark rounded-3">
               <h2>Mobile Application</h2>
-              <p>I build mobile applications from scratch, or create a mobile app based on an already built website of a client.</p>
+              <p><%= serviceB %></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="h-100 p-5 text-white bg-dark rounded-3">
               <h2>Database structure</h2>
-              <p>I build database structure to cater clients data bank. </p>
+              <p><%= serviceC %></p>
             </div>
           </div>
         </div> 

@@ -23,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules'))); //made static folder for node_modules aalmario
 
+//routers to navigate in the webpage (by: aalmario)
 app.use('/', homeRouter);
 app.use('/aboutMe', aboutMeRouter);
 app.use('/projects', projectsRouter);
