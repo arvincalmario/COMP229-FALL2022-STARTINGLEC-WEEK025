@@ -4,8 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var homeRouter = require('./routes/home');
+var aboutMeRouter = require('./routes/aboutMe');
+var projectsRouter = require('./routes/projects');
+var servicesRouter = require('./routes/services');
+var contactRouter = require('./routes/contact');
 
 var app = express();
 
@@ -20,8 +23,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules'))); //made static folder for node_modules aalmario
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//routers to navigate in the webpage (by: aalmario)
+app.use('/', homeRouter);
+app.use('/aboutMe', aboutMeRouter);
+app.use('/projects', projectsRouter);
+app.use('/services', servicesRouter);
+app.use('/contact', contactRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

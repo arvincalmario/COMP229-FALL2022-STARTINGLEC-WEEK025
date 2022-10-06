@@ -1,22 +1,41 @@
 html {
   position: relative;
   min-height: 100%;
+  font-style: italic;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  background-color: rgb(66, 65, 65);
+  height: 100%;
+  
 }
 
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
-  width: 100%;
-  /* set the fixed height of the footer here */
   height: 60px;
-  background-color: #f5f5f5;
+  padding-top: 50px;
+  text-align: center;
+  color: white;
+  background-color: rgb(66, 65, 65);
 }
 
-.flash{
-  color: red;
+.carousel-caption {
+  position: relative;
+  left: auto;
+  right: auto;
+  } 
+
+.projectsHeader {
+  text-align: center;
+  color: white;
 }
+
+.projImg {
+
+  padding-left: 20%;
+}
+
+
+  
+

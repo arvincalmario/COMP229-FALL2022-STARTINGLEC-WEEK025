@@ -1,0 +1,54 @@
+<!-- Student ID: 301225269
+Name: Arvin Almario
+Data: Oct 03, 2022 -->
+
+<% include partials/header.ejs %>
+
+<!-- using carousel bootstrap to show the projects done -->
+    <br>
+    <div class="projectsHeader">
+      <h4><%= caption %></h4>
+    </div>
+    <br>
+    <div id="slideShow" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+          <div class="carousel-item active">
+            <div class="projImg">
+              <img src="/images/java.PNG" class="d-block w-75">
+            </div>
+            <div class="carousel-caption">
+              <h5>Java project</h5>
+              <p>An on-going process to learn Java programming. </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="projImg">
+              <img src="/images/db.PNG" class="d-block w-75">
+            </div>
+            <div class="carousel-caption">
+              <h5>Advance Database</h5>
+              <p>Learning PL/SQL to create own Database</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="projImg">
+              <img src="/images/ue5.PNG" class="d-block w-75">
+            </div>
+            <div class="carousel-caption">
+              <h5>Unreal Engine 5</h5>
+              <p>Learning the Basics of Unreal Engine 5 to code any future games in high quality</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slideShow" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slideShow" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+<% include partials/footer.ejs %>
+ 
