@@ -1,0 +1,58 @@
+<% include partials/header.ejs %>
+
+<!-- jumbotron with table and form using bootstrap 5 -->
+<div class="container py-4">    
+    <div class="p-5 mb-4 bg-dark text-white rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Are you Intrigue??</h1>
+            <p class="col-md-8 fs-4">If you are interested to avail in any of my services, you can reach me through the following:</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Phone</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0"><%= phone %></p>
+            </div>
+        </div>
+          <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                <p class="mb-0">Mobile</p>
+                </div>
+                <div class="col-sm-9">
+                <p class="text-muted mb-0"><%= mobile %></p>
+                </div>
+            </div>
+          <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+                </div>
+                <div class="col-sm-9">
+                <p class="text-muted mb-0"><%= email %></p>
+                </div>
+            </div>
+    </div>
+</div>
+<div class="container py-4">
+    <div class="p-5 mb-4 bg-dark text-white rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Questions??</h1>
+        </div>
+        <form>
+            <div class="mb-3">
+            <label for="messageFor" class="form-label">Type in your message here:</label>
+            <input type="messageType" class="form-control" id="messageId">
+            </div>
+            <div class="mb-3">
+            <label for="emailFor" class="form-label">Your Email address so we can contact you:</label>
+            <input type="emailType" class="form-control" id="emailId">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>
+ 
