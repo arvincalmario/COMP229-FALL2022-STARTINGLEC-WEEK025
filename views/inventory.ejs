@@ -5,33 +5,55 @@ Data: Oct 03, 2022 -->
 <% include partials/header.ejs %>
 
 <!-- using jumbotron like in service ejs, get the js file from routes -->
-<div class="container mt-3">
-  <h2></h2>
-  <div class="mt-4 p-5 bg-dark text-white rounded">
-    <h1>Mission</h1> 
-    <p><%= mission %></p> 
-  </div>
-</div>
+<main class="container">
+  <div class="row">
+      <h1><%= title %></h1>
+      <br>
+      <div>
+          <a href="/inventory/add" class="btn btn-primary align-self-end" role="button">
+              <i class="fas fa-plus-circle"></i> 
+              Add a new Item
+          </a>                
+      </div>
 
-<div class="container mt-3">
-  <h2></h2>
-  <div class="mt-4 p-5 bg-dark text-white rounded">
-    <h1>Vision</h1> 
-    <p><%= vision %></p> 
-  </div>
-</div>
+      <div class="table-responsive">
+          <table class="table table-bordered table-striped table-hover">
+              <!-- Header Row-->
+              <tr>
+                  <th class="text-center">Item</th>
+                  <th class="text-center">Qty</th>
+                  <th class="text-center">Status</th>
+                  <th>Size</th>
+                  <th class="text-center">Tags</th>
+                  <th class="text-center" colspan="2">Actions</th>
+              </tr>
 
-<div class="container mt-3">
-  <h2></h2>
-  <div class="mt-4 p-5 bg-dark text-white rounded">
-    <h1>Core Values</h1> 
-    <ul>
-      <li>Put clients first</li>
-      <li>Approach every day with curiosity</li>
-      <li>Embrace an ownership mentality</li>
-      <li>Act with integrity</li>
-    </ul>
+              <!-- Repeatable Template Row -->
+
+              <% for(let count = 0; count < InventoryList.length; count++) { %>
+                  <tr>
+                      <td class="text-center"><%= InventoryList[count].item %></td>
+                      <td class="text-center"><%= InventoryList[count].qty %></td>
+                      <td class="text-center"><%= InventoryList[count].status %></td>
+                      <td>
+                          Hight: <%= InventoryList[count].size.h %><br/>
+                          Width: <%= InventoryList[count].size.w %><br/>
+                          UOM: <%= InventoryList[count].size.uom %><br/>
+                      </td>
+                      <td class="text-center"><%= InventoryList[count].tags %></td>
+                      <td class="text-center">
+                          <a href="/inventory/edit/<%= InventoryList[count]._id %>" class="btn btn-primary btn-sm">
+                          <i class="fas fa-pencil-alt"></i></a>
+                      </td>
+                      <td class="text-center">
+                          <a href="/inventory/delete/<%= InventoryList[count]._id %>" class="btn btn-danger btn-sm">
+                          <i class="fas fa-trash-alt"></i></a>
+                      </td>
+                  </tr>
+              <% } %>
+          </table>
+      </div>
   </div>
-</div>
+</main>
 
 <% include partials/footer.ejs %>

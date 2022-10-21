@@ -5,16 +5,9 @@
 var express = require('express');
 var router = express.Router();
 
+let inventoryController = require('../controllers/inventory.controller')
+
 /* home page response. */
-router.get('/', function(req, res, next) {
-  res.render(
-    'inventory', 
-    { 
-      title: 'Home', 
-      mission: 'to provide out of the box ideas that gives my clients advantage to their business competitors.',
-      vision: 'to create a better everyday life for many people.', 
-    }
-  );
-});
+router.get('/', inventoryController.inventory);
 
 module.exports = router;

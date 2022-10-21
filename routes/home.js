@@ -5,16 +5,9 @@
 var express = require('express');
 var router = express.Router();
 
+let indexController = require('../controllers/index.controller')
+
 /* home page response. */
-router.get('/', function(req, res, next) {
-  res.render(
-    'home', 
-    { 
-      title: 'Home', 
-      mission: 'to provide out of the box ideas that gives my clients advantage to their business competitors.',
-      vision: 'to create a better everyday life for many people.', 
-    }
-  );
-});
+router.get('/', indexController.home);
 
 module.exports = router;

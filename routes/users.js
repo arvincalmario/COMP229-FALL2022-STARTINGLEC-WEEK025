@@ -7,7 +7,7 @@ var router = express.Router();
 
 let indexController = require('../controllers/index.controller')
 
-/* About Me response */
-router.get('/', indexController.aboutMe);
+/* contact response. */
+router.get('/', indexController.users);
 
 module.exports = router;
