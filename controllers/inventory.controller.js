@@ -12,7 +12,7 @@ exports.inventoryList = function(req, res, next) {
         else
         {
             res.render('inventory/list', {
-                title: 'Inventory List', 
+                title: 'Business Contacts', 
                 InventoryList: inventoryList
             })            
         }
@@ -33,7 +33,7 @@ module.exports.displayEditPage = (req, res, next) => {
         {
             //show the edit view
             res.render('inventory/add_edit', {
-                title: 'Edit Item', 
+                title: 'Edit Contact Information', 
                 item: itemToEdit
             })
         }
@@ -49,12 +49,12 @@ module.exports.processEditPage = (req, res, next) => {
         item: req.body.item,
         qty: req.body.qty,
         status: req.body.status,
-        size : {
-            h: req.body.size_h,
-            w: req.body.size_w,
-            uom: req.body.size_uom,
-        },
-        tags: req.body.tags.split(",").map(word => word.trim())
+        // size : {
+        //     h: req.body.size_h,
+        //     w: req.body.size_w,
+        //     uom: req.body.size_uom,
+        // },
+        // tags: req.body.tags.split(",").map(word => word.trim())
     });
 
     // console.log(updatedItem);
@@ -79,7 +79,7 @@ module.exports.displayAddPage = (req, res, next) => {
     let newItem = Inventory();
 
     res.render('inventory/add_edit', {
-        title: 'Add a new Item',
+        title: 'Add contact',
         item: newItem
     })          
 }
@@ -90,12 +90,12 @@ module.exports.processAddPage = (req, res, next) => {
         item: req.body.item,
         qty: req.body.qty,
         status: req.body.status,
-        size : {
-            h: req.body.size_h,
-            w: req.body.size_w,
-            uom: req.body.size_uom,
-        },
-        tags: req.body.tags.split(",").map(word => word.trim())
+        // size : {
+        //     h: req.body.size_h,
+        //     w: req.body.size_w,
+        //     uom: req.body.size_uom,
+        // },
+        // tags: req.body.tags.split(",").map(word => word.trim())
     });
 
     Inventory.create(newItem, (err, item) =>{
