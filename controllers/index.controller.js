@@ -65,17 +65,17 @@ exports.aboutMe = function(req, res, next) {
     );
   };
 
-  exports.inventory = function(req, res, next) {
-    res.render(
-      'inventory', 
-      { 
-        title: 'inventory', 
-        mission: 'inventory',
-        vision: 'inventory', 
-        inventory: 'inventory'
-      }
-    );
-  };
+  // exports.inventory = function(req, res, next) {
+  //   res.render(
+  //     'inventory', 
+  //     { 
+  //       title: 'inventory', 
+  //       mission: 'inventory',
+  //       vision: 'inventory', 
+  //       inventory: 'inventory'
+  //     }
+  //   );
+  // };
 
   exports.users = function(req, res, next) {
     res.render(

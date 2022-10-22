@@ -9,7 +9,7 @@ var aboutMeRouter = require('../routes/aboutMe');
 var projectsRouter = require('../routes/projects');
 var servicesRouter = require('../routes/services');
 var contactRouter = require('../routes/contact');
-var inventoryRouter = require('../routes/inventory');
+var inventoryRouter = require('../routes/inventory.router');
 var usersRouter = require('../routes/users');
 
 var app = express();
