@@ -8,7 +8,7 @@ var router = express.Router();
 let inventoryController = require('../controllers/inventory.controller')
 
 /* GET users listing. */
-router.get('/list', inventoryController.inventoryList);
+router.get('/list', inventoryController.bContactList);
 
 
 // Routers for edit

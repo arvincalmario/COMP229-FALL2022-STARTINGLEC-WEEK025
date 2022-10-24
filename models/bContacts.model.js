@@ -1,10 +1,10 @@
 let mongoose = require('mongoose');
 
 // Create a model class
-let inventoryModel = mongoose.Schema(
+let bContactsModel = mongoose.Schema(
     {
         contactName: String,
-        contactNumber: Number,
+        contactNumber: String,
         eMail: String,
     },
     {
@@ -12,4 +12,4 @@ let inventoryModel = mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('Inventory', inventoryModel);
+module.exports = mongoose.model('bContacts', bContactsModel);

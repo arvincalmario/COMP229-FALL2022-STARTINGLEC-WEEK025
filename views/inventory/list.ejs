@@ -19,17 +19,17 @@ Data: Oct 03, 2022 -->
                     <th class="text-center : h-100 p-3 text-white bg-dark rounded-3" colspan="2">Actions</th>
                 </tr>
                 <!-- Repeatable Template Row -->
-                <% for(let count = 0; count < InventoryList.length; count++) { %>
+                <% for(let count = 0; count < bCList.length; count++) { %>
                     <tr>
-                        <td class="text-center : h-100 p-3 text-white bg-dark rounded-3""><%= InventoryList[count].item %></td>
-                        <td class="text-center : h-100 p-3 text-white bg-dark rounded-3""><%= InventoryList[count].qty %></td>
-                        <td class="text-center : h-100 p-3 text-white bg-dark rounded-3""><%= InventoryList[count].status %></td>
+                        <td class="text-center : h-100 p-3 text-white bg-dark rounded-3""><%= bCList[count].contactName %></td>
+                        <td class="text-center : h-100 p-3 text-white bg-dark rounded-3""><%= bCList[count].contactNumber %></td>
+                        <td class="text-center : h-100 p-3 text-white bg-dark rounded-3""><%= bCList[count].eMail %></td>
                         <td class="text-center : h-100 p-3 text-white bg-dark rounded-3"">
-                            <a href="/inventory/edit/<%= InventoryList[count]._id %>" class="btn btn-dark">
+                            <a href="/inventory/edit/<%= bCList[count]._id %>" class="btn btn-dark">
                             <i class="fas fa-pencil-alt"></i></a>
                         </td>
                         <td class="text-center">
-                            <a href="/inventory/delete/<%= InventoryList[count]._id %>" class="btn btn-dark">
+                            <a href="/inventory/delete/<%= bCList[count]._id %>" class="btn btn-dark">
                             <i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>

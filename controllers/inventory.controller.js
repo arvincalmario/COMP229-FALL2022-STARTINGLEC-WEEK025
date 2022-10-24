@@ -1,10 +1,10 @@
 // create a reference to the model
-let Inventory = require('../models/inventory.model');
+let bContacts = require('../models/bContacts.model');
 
-exports.inventoryList = function(req, res, next) {  
+exports.bContactList = function(req, res, next) {  
     
-    Inventory.find((err, inventoryList) => {
-        // console.log(inventoryList);
+    bContacts.find((err, bContactList) => {
+        // console.log(bContactList);
         if(err)
         {
             return console.error(err);
@@ -13,7 +13,7 @@ exports.inventoryList = function(req, res, next) {
         {
             res.render('inventory/list', {
                 title: 'Business Contacts', 
-                InventoryList: inventoryList
+                bCList: bContactList
             })            
         }
     });
@@ -23,7 +23,7 @@ exports.inventoryList = function(req, res, next) {
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
-    Inventory.findById(id, (err, itemToEdit) => {
+    bContacts.findById(id, (err, itemToEdit) => {
         if(err)
         {
             console.log(err);
@@ -44,22 +44,14 @@ module.exports.displayEditPage = (req, res, next) => {
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id
 
-    let updatedItem = Inventory({
+    let updatedItem = bContacts({
         _id: req.body.id,
-        item: req.body.item,
-        qty: req.body.qty,
-        status: req.body.status,
-        // size : {
-        //     h: req.body.size_h,
-        //     w: req.body.size_w,
-        //     uom: req.body.size_uom,
-        // },
-        // tags: req.body.tags.split(",").map(word => word.trim())
+        contactName: req.body.contactName,
+        contactNumber: req.body.contactNumber,
+        eMail: req.body.eMail,
     });
 
-    // console.log(updatedItem);
-
-    Inventory.updateOne({_id: id}, updatedItem, (err) => {
+    bContacts.updateOne({_id: id}, updatedItem, (err) => {
         if(err)
         {
             console.log(err);
@@ -67,8 +59,8 @@ module.exports.processEditPage = (req, res, next) => {
         }
         else
         {
-            // console.log(req.body);
-            // refresh the book list
+            console.log(req.body);
+            // refresh list
             res.redirect('/inventory/list');
         }
     });
@@ -76,7 +68,7 @@ module.exports.processEditPage = (req, res, next) => {
 
 
 module.exports.displayAddPage = (req, res, next) => {
-    let newItem = Inventory();
+    let newItem = bContacts();
 
     res.render('inventory/add_edit', {
         title: 'Add contact',
@@ -85,20 +77,14 @@ module.exports.displayAddPage = (req, res, next) => {
 }
 
 module.exports.processAddPage = (req, res, next) => {
-    let newItem = Inventory({
+    let newItem = bContacts({
         _id: req.body.id,
-        item: req.body.item,
-        qty: req.body.qty,
-        status: req.body.status,
-        // size : {
-        //     h: req.body.size_h,
-        //     w: req.body.size_w,
-        //     uom: req.body.size_uom,
-        // },
-        // tags: req.body.tags.split(",").map(word => word.trim())
+        contactName: req.body.contactName,
+        contactNumber: req.body.contactNumber,
+        eMail: req.body.eMail,
     });
 
-    Inventory.create(newItem, (err, item) =>{
+    bContacts.create(newItem, (err, item) =>{
         if(err)
         {
             console.log(err);
@@ -106,7 +92,7 @@ module.exports.processAddPage = (req, res, next) => {
         }
         else
         {
-            // refresh the book list
+            // refresh list
             console.log(item);
             res.redirect('/inventory/list');
         }
@@ -119,7 +105,7 @@ module.exports.processAddPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    Inventory.remove({_id: id}, (err) => {
+    bContacts.remove({_id: id}, (err) => {
         if(err)
         {
             console.log(err);
@@ -127,7 +113,7 @@ module.exports.performDelete = (req, res, next) => {
         }
         else
         {
-            // refresh the book list
+            // refresh list
             res.redirect('/inventory/list');
         }
     });
