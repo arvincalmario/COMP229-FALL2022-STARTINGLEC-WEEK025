@@ -65,21 +65,22 @@ exports.aboutMe = function(req, res, next) {
     );
   };
 
-  // exports.inventory = function(req, res, next) {
-  //   res.render(
-  //     'inventory', 
-  //     { 
-  //       title: 'inventory', 
-  //       mission: 'inventory',
-  //       vision: 'inventory', 
-  //       inventory: 'inventory'
-  //     }
-  //   );
-  // };
-
-  exports.users = function(req, res, next) {
+  exports.logIn = function(req, res, next) {
     res.render(
-      'users', 
+      'logIn', 
+      { 
+        title: 'user', 
+        phone: 'user',
+        mobile: 'user',
+        email: 'user',
+        user: 'user'
+      }
+    );
+  }
+
+  exports.signUp = function(req, res, next) {
+    res.render(
+      'signUp', 
       { 
         title: 'user', 
         phone: 'user',

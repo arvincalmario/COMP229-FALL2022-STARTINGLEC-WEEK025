@@ -11,7 +11,7 @@ exports.bContactList = function(req, res, next) {
         }
         else
         {
-            res.render('inventory/list', {
+            res.render('businesscontacts/list', {
                 title: 'Business Contacts', 
                 bCList: bContactList
             })            
@@ -20,7 +20,7 @@ exports.bContactList = function(req, res, next) {
 }
 
 
-module.exports.displayEditPage = (req, res, next) => {
+exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
     bContacts.findById(id, (err, itemToEdit) => {
@@ -32,7 +32,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('inventory/add_edit', {
+            res.render('businesscontacts/add_edit', {
                 title: 'Edit Contact Information', 
                 item: itemToEdit
             })
@@ -41,7 +41,7 @@ module.exports.displayEditPage = (req, res, next) => {
 }
 
 
-module.exports.processEditPage = (req, res, next) => {
+exports.processEditPage = (req, res, next) => {
     let id = req.params.id
 
     let updatedItem = bContacts({
@@ -61,22 +61,22 @@ module.exports.processEditPage = (req, res, next) => {
         {
             console.log(req.body);
             // refresh list
-            res.redirect('/inventory/list');
+            res.redirect('/businesscontacts/list');
         }
     });
 }
 
 
-module.exports.displayAddPage = (req, res, next) => {
+exports.displayAddPage = (req, res, next) => {
     let newItem = bContacts();
 
-    res.render('inventory/add_edit', {
+    res.render('businesscontacts/add_edit', {
         title: 'Add contact',
         item: newItem
     })          
 }
 
-module.exports.processAddPage = (req, res, next) => {
+exports.processAddPage = (req, res, next) => {
     let newItem = bContacts({
         _id: req.body.id,
         contactName: req.body.contactName,
@@ -94,7 +94,7 @@ module.exports.processAddPage = (req, res, next) => {
         {
             // refresh list
             console.log(item);
-            res.redirect('/inventory/list');
+            res.redirect('/businesscontacts/list');
         }
     });
 
@@ -102,7 +102,7 @@ module.exports.processAddPage = (req, res, next) => {
 
 
 
-module.exports.performDelete = (req, res, next) => {
+exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
     bContacts.remove({_id: id}, (err) => {
@@ -114,7 +114,7 @@ module.exports.performDelete = (req, res, next) => {
         else
         {
             // refresh list
-            res.redirect('/inventory/list');
+            res.redirect('/businesscontacts/list');
         }
     });
 }

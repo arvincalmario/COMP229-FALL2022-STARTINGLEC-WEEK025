@@ -46,24 +46,31 @@ Data: Oct 03, 2022 -->
                 <% } %>
                 </li>
                 <li class="nav-item">
-                <% if(title == "Contact"){  %>
-                    <a class="nav-link active" href="/contact">Contact</a>
+                <% if(title == "Contact Me"){  %>
+                    <a class="nav-link active" href="/contact">Contact Me</a>
                 <% } else { %>  
-                    <a class="nav-link" href="/contact">Contact</a>
+                    <a class="nav-link" href="/contact">Contact Me</a>
                 <% } %>
                 </li>
                 <li class="nav-item">
-                    <% if(title == "Inventory"){  %>
-                        <a class="nav-link active" href="/inventory/list">Inventory</a>
+                    <% if(title == "Business Contact"){  %>
+                        <a class="nav-link active" href="/businesscontacts/list">Business Contact</a>
                     <% } else { %>  
-                        <a class="nav-link" href="/inventory/list">Inventory</a>
+                        <a class="nav-link" href="/businesscontacts/list">Business Contact</a>
                     <% } %>
                 </li>
                 <li class="nav-item">
-                    <% if(title == "Users"){  %>
-                        <a class="nav-link active" href="/users">Users</a>
+                    <% if(title == "Log In"){  %>
+                        <a class="nav-link active" href="/logIn">Log In</a>
                     <% } else { %>  
-                        <a class="nav-link" href="/users">Users</a>
+                        <a class="nav-link" href="/logIn">Log In</a>
+                    <% } %>
+                </li>
+                <li class="nav-item">
+                    <% if(title == "Sign Up"){  %>
+                        <a class="nav-link active" href="/signUp">Sign Up</a>
+                    <% } else { %>  
+                        <a class="nav-link" href="/signUp">Sign Up</a>
                     <% } %>
                 </li>
             </ul>

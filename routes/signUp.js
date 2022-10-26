@@ -8,6 +8,6 @@ var router = express.Router();
 let indexController = require('../controllers/index.controller')
 
 /* contact response. */
-router.get('/', indexController.users);
+router.get('/', indexController.signUp);
 
 module.exports = router;
