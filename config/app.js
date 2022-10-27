@@ -3,6 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// var compress = require('compression');
+// var bodyParser = require('body-parser');
+// var methodOverride = require('method-override');
+var session = require('express-session');
+var flash = require('connect-flash');
+var passport = require('passport');
 
 var homeRouter = require('../routes/home');
 var aboutMeRouter = require('../routes/aboutMe');
@@ -10,11 +16,17 @@ var projectsRouter = require('../routes/projects');
 var servicesRouter = require('../routes/services');
 var contactRouter = require('../routes/contact');
 var businessContactRouter = require('../routes/bContacts.router');
-var logInRouter = require('../routes/logIn');
-var signUpRouter = require('../routes/signUp');
+var userRouter = require('../routes/user.router');
+// var signUpRouter = require('../routes/user.router');
 
 
 var app = express();
+
+app.use(session({
+  saveUninitialized: true,
+  resave: true,
+  secret: "sessionSecret"
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -27,6 +39,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules'))); //made static folder for node_modules aalmario
 
+//passport setup
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 //routers to navigate in the webpage (by: aalmario)
 app.use('/', homeRouter);
 app.use('/aboutMe', aboutMeRouter);
@@ -34,8 +51,9 @@ app.use('/projects', projectsRouter);
 app.use('/services', servicesRouter);
 app.use('/contact', contactRouter);
 app.use('/businesscontacts', businessContactRouter);
-app.use('/logIn', logInRouter);
-app.use('/signUp', signUpRouter);
+app.use('/users', userRouter);
+// app.use('/logIn', logInRouter);
+// app.use('/signUp', signUpRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

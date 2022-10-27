@@ -1,4 +1,4 @@
-let User = require('../models/user');
+let User = require('../models/users.model');
 let passport = require('passport');
 
 function getErrorMessage(err) {
@@ -25,7 +25,7 @@ function getErrorMessage(err) {
 
 module.exports.renderSignin = function(req, res, next) {
   if (!req.user) {
-    res.render('auth/signin', {
+    res.render('authentication/logIn', {
       title: 'Sign-in Form',
       messages: req.flash('error') || req.flash('info')
     });
@@ -41,7 +41,7 @@ module.exports.renderSignup = function(req, res, next) {
     // creates a empty new user object.
     let newUser = User();
 
-    res.render('auth/signup', {
+    res.render('authentication/signUp', {
       title: 'Sign-up Form',
       messages: req.flash('error'),
       user: newUser
@@ -66,7 +66,7 @@ module.exports.signup = function(req, res, next) {
 
         req.flash('error', message);
         // return res.redirect('/users/signup');
-        return res.render('auth/signup', {
+        return res.render('authentication/signUp', {
           title: 'Sign-up Form',
           messages: req.flash('error'),
           user: user

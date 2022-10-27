@@ -1,4 +1,4 @@
-<% include partials/header.ejs %>
+<%- include ../partials/header.ejs %>
 
 <!-- jumbotron with table and form using bootstrap 5 -->
 <div class="container py-4">    
@@ -27,7 +27,7 @@
                
                     <div class="text-center text-lg-start mt-2 pt-2">
                     <button type="button" class="btn btn-secondary">Login</button>
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signUp"
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/users/signup"
                         class="link-danger" >Register</a></p>
                     </div>
         
@@ -39,5 +39,5 @@
 </div>
 
 
-<% include partials/footer.ejs %>
+<%- include ../partials/footer.ejs %>
  
