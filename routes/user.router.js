@@ -1,3 +1,7 @@
+// Student ID: 301225269
+// Name: Arvin Almario
+// Data: Oct 28, 2022
+
 let express = require('express');
 let router = express.Router();
 let usersController = require('../controllers/users.controller');
@@ -7,7 +11,6 @@ let passport = require('passport');
 router.get('/', function(req, res, next) {  
   res.render('users', { 
     title: 'Users',
-    userName: req.user ? req.user.username : ''
   });
 });
 

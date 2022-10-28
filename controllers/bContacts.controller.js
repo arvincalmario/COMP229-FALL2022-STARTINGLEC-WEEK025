@@ -1,10 +1,14 @@
+// Student ID: 301225269
+// Name: Arvin Almario
+// Data: Oct 28, 2022
+
 // create a reference to the model
 let bContacts = require('../models/bContacts.model');
 
 exports.bContactList = function(req, res, next) {  
     
     bContacts.find((err, bContactList) => {
-        // console.log(bContactList);
+
         if(err)
         {
             return console.error(err);

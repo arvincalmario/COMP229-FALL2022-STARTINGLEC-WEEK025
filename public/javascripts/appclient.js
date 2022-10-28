@@ -1,3 +1,7 @@
+// Student ID: 301225269
+// Name: Arvin Almario
+// Data: Oct 28, 2022
+
 console.log("it goes to the client side123");
 
 if(getTitle == "Business Contacts")

@@ -18,7 +18,7 @@ exports.aboutMe = function(req, res, next) {
       { 
         
         title: 'About Me',
-        fullName: 'Arvin Almario',
+        fullName: 'Arvin C. Almario',
         nickName: 'Bino',
         gender:'Male',
         dateOfBirth: 'January 1 1945',

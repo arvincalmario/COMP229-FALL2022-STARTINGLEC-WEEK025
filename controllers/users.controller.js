@@ -1,3 +1,7 @@
+// Student ID: 301225269
+// Name: Arvin Almario
+// Data: Oct 28, 2022
+
 let User = require('../models/users.model');
 let passport = require('passport');
 
@@ -45,7 +49,8 @@ module.exports.renderSignup = function(req, res, next) {
     res.render('authentication/signUp', {
       title: 'Sign-up Form',
       messages: req.flash('error'),
-      user: newUser
+      user: newUser,
+      userName: req.user ? req.user.username : ''
     });
 
   } else {
@@ -70,7 +75,8 @@ module.exports.signup = function(req, res, next) {
         return res.render('authentication/signUp', {
           title: 'Sign-up Form',
           messages: req.flash('error'),
-          user: user
+          user: user,
+          userName: req.user ? req.user.username : ''
         });
       }
       req.login(user, (err) => {

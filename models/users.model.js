@@ -1,4 +1,6 @@
-//edited today
+// Student ID: 301225269
+// Name: Arvin Almario
+// Data: Oct 28, 2022
 
 let mongoose = require('mongoose');
 let crypto = require('crypto');

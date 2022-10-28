@@ -3,13 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// var compress = require('compression');
-// var bodyParser = require('body-parser');
-// var methodOverride = require('method-override');
 var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
-
 var homeRouter = require('../routes/home');
 var aboutMeRouter = require('../routes/aboutMe');
 var projectsRouter = require('../routes/projects');
@@ -17,7 +13,7 @@ var servicesRouter = require('../routes/services');
 var contactRouter = require('../routes/contact');
 var businessContactRouter = require('../routes/bContacts.router');
 var userRouter = require('../routes/user.router');
-// var signUpRouter = require('../routes/user.router');
+
 
 
 var app = express();
@@ -52,8 +48,6 @@ app.use('/services', servicesRouter);
 app.use('/contact', contactRouter);
 app.use('/businesscontacts', businessContactRouter);
 app.use('/users', userRouter);
-// app.use('/logIn', logInRouter);
-// app.use('/signUp', signUpRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
