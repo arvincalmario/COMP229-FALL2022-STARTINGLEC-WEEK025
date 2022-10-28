@@ -1,0 +1,61 @@
+<%- include ../partials/header.ejs %>
+
+<!-- Content for the Add_Edit page -->
+<div class="container py-4 p-0">
+    <div class="p-0 px-4 py-4 mb-0 bg-dark text-white rounded-3">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <input type="hidden"
+                        name="id"
+                        value="<%= item._id %>"
+                    >
+                    <label for="contactNameField">Contact Name</label>
+                    <input type="text" class="form-control"
+                        id="contactNameField"
+                        placeholder="Enter name here"
+                        name="contactName" 
+                        value="<%= item.contactName %>"
+                        required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="contactNumberField">Contact Number</label>
+                    <input type="number" class="form-control"
+                    id="contactNumberField"
+                    placeholder="Enter number here"
+                    name="contactNumber" 
+                    value="<%= item.contactNumber %>"
+                    required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="eMailField">Email address</label>
+                    <input type="text" class="form-control"
+                    id="eMailField"
+                    placeholder="Enter E-mail"
+                    name="eMail" 
+                    value="<%= item.eMail %>"
+                    >
+                </div>
+                <br>
+
+                <button class="btn btn-dark p-2" type="submit">
+                    <i class="fas fa-check"></i>
+                    <span class="px-1">Submit</span>
+                </button>
+                
+                <a href="/businesscontacts/list" class="btn btn-dark p-2">
+                    <i class="fas fa-undo"></i> 
+                    <span class="px-1">Cancel</span>
+                </a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<%- include ../partials/footer.ejs %>

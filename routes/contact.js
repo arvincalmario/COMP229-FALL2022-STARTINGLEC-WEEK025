@@ -5,17 +5,9 @@
 var express = require('express');
 var router = express.Router();
 
+let indexController = require('../controllers/index.controller')
+
 /* contact response. */
-router.get('/', function(req, res, next) {
-  res.render(
-    'contact', 
-    { 
-      title: 'Contact', 
-      phone: '+63 919-3033871',
-      mobile: '+1 989-23090',
-      email: 'aalmario@my.centennialcollege.ca'
-    }
-  );
-});
+router.get('/', indexController.contact);
 
 module.exports = router;

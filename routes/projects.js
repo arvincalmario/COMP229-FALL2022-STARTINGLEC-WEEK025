@@ -5,15 +5,10 @@
 var express = require('express');
 var router = express.Router();
 
+let indexController = require('../controllers/index.controller')
+
 /* project response */
-router.get('/', function(req, res, next) {
-    res.render(
-      'projects', 
-      { 
-        title: 'Projects',
-        caption: 'some of my on-going projects to learn different programming languages'
-      }
-    );
-  });
+router.get('/', indexController.projects);
 
   module.exports = router;
+
