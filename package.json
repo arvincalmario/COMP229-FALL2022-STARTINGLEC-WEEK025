@@ -17,7 +17,7 @@
     "jquery": "^3.6.0",
     "mongoose": "^6.0.8",
     "morgan": "~1.9.1",
-    "passport": "^0.6.0",
+    "passport": "^0.5.0",
     "passport-local": "^1.0.0"
   },
   "name": "comp229-fall2022-startinglec-week025",
