@@ -27,7 +27,8 @@ module.exports.renderSignin = function(req, res, next) {
   if (!req.user) {
     res.render('authentication/logIn', {
       title: 'Sign-in Form',
-      messages: req.flash('error') || req.flash('info')
+      messages: req.flash('error') || req.flash('info'),
+      userName: req.user ? req.user.username : ''
     });
   } else {
     console.log(req.user);

@@ -13,7 +13,8 @@ exports.bContactList = function(req, res, next) {
         {
             res.render('businesscontacts/list', {
                 title: 'Business Contacts', 
-                bCList: bContactList
+                bCList: bContactList,
+                userName: req.user ? req.user.username : ''
             })            
         }
     });
@@ -34,7 +35,8 @@ exports.displayEditPage = (req, res, next) => {
             //show the edit view
             res.render('businesscontacts/add_edit', {
                 title: 'Edit Contact Information', 
-                item: itemToEdit
+                item: itemToEdit,
+                userName: req.user ? req.user.username : ''
             })
         }
     });
@@ -49,6 +51,7 @@ exports.processEditPage = (req, res, next) => {
         contactName: req.body.contactName,
         contactNumber: req.body.contactNumber,
         eMail: req.body.eMail,
+        userName: req.user ? req.user.username : ''
     });
 
     bContacts.updateOne({_id: id}, updatedItem, (err) => {
@@ -72,7 +75,8 @@ exports.displayAddPage = (req, res, next) => {
 
     res.render('businesscontacts/add_edit', {
         title: 'Add contact',
-        item: newItem
+        item: newItem,
+        userName: req.user ? req.user.username : ''
     })          
 }
 
@@ -82,6 +86,7 @@ exports.processAddPage = (req, res, next) => {
         contactName: req.body.contactName,
         contactNumber: req.body.contactNumber,
         eMail: req.body.eMail,
+        userName: req.user ? req.user.username : ''
     });
 
     bContacts.create(newItem, (err, item) =>{

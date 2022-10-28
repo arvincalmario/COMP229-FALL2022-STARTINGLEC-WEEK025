@@ -7,23 +7,34 @@ var router = express.Router();
 
 let bContactsController = require('../controllers/bContacts.controller')
 
+// helper function for guard purposes
+function requireAuth(req, res, next)
+{
+    // check if the user is logged in
+    if(!req.isAuthenticated())
+    {
+        req.session.url = req.originalUrl;
+        return res.redirect('/users/signin');
+    }
+    next();
+}
+
 /* GET users listing. */
 router.get('/list', bContactsController.bContactList);
 
-
 // Routers for edit
-router.get('/edit/:id', bContactsController.displayEditPage);
-router.post('/edit/:id', bContactsController.processEditPage);
+router.get('/edit/:id', requireAuth, bContactsController.displayEditPage);
+router.post('/edit/:id', requireAuth, bContactsController.processEditPage);
 
 
 /* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add', bContactsController.displayAddPage);
+router.get('/add', requireAuth, bContactsController.displayAddPage);
 
 /* POST Route for processing the Add page - CREATE Operation */
-router.post('/add', bContactsController.processAddPage);
+router.post('/add', requireAuth, bContactsController.processAddPage);
 
 
 // Route for Delete
-router.get('/delete/:id', bContactsController.performDelete);
+router.get('/delete/:id', requireAuth, bContactsController.performDelete);
 
 module.exports = router;
